@@ -5,22 +5,11 @@ import Deck from './Deck.js'
 
 function App() {
 
-  const [newDeck, setNewDeck] = useState(null);
-
-  useEffect(function fetchUserWhenMounted() {
-    async function fetchDeck() {
-      const newDeck = await axios.get(
-        "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1");
-      setNewDeck(newDeck.data);
-    }
-    fetchDeck();}, []);
-
-
-  return (
+    return (
     
-<div>
-  <Deck/>
-  {newDeck ? <Deck newDeck={newDeck}/> : <i>(loading ... )</i>}</div>
+    <div>
+      <Deck /> 
+    </div>  
   );
 }
 
